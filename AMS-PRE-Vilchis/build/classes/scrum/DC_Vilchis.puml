@@ -1,0 +1,40 @@
+@startuml
+
+title Sistema de Gestion de Pedidos - Diagrama de Clases
+
+skinparam classAttributeIconSize 0
+
+class Usuario {
+    - id : int
+    - nombre : String
+    - correo : String
+
+    + consultarProductos() : void
+    + realizarPedido(producto : Producto, cantidad : int) : Pedido
+    + consultarHistorial() : List<Pedido>
+}
+
+class Producto {
+    - id : int
+    - nombre : String
+    - precio : Decimal
+
+    + consultarCatalogo() : List<Producto>
+}
+
+class Pedido {
+    - id : int
+    - idUsuario : int
+    - idProducto : int
+    - cantidad : int
+    - fechaPedido : Date
+
+    + registrarPedido() : boolean
+    + consultarPedido() : Pedido
+    + validarDatos() : boolean
+}
+
+Usuario "1" -- "0..*" Pedido : realiza
+Producto "1" -- "0..*" Pedido : pertenece a
+
+@enduml

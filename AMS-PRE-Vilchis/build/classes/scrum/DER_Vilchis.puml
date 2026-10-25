@@ -1,0 +1,32 @@
+
+@startuml
+
+entity "Usuario" as usuario {
+    *id : INT <<PK>>
+    --
+    *nombre : VARCHAR(100)
+    *email : VARCHAR(100)
+}
+
+entity "Producto" as producto {
+    *id : INT <<PK>>
+    --
+    *nombre : VARCHAR(100)
+    *precio : DECIMAL(10,2)
+}
+
+entity "Pedido" as pedido {
+    *id_pedido : INT <<PK>>
+    --
+    *user_id : INT <<FK>>
+    *product_id : INT <<FK>>
+    *cantidad : INT
+    *order_date : DATE
+}
+
+'relaciones
+
+usuario ||--o{ pedido : "realiza (1:N)"
+producto ||--o{ pedido : "incluye (1:N)"
+
+@enduml
