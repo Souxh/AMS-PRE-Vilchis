@@ -1,0 +1,17 @@
+@startgantt
+
+title Diagrama de Gantt - Sistema de Gestion de Pedidos (SCRUM)
+
+-- Sprint 1: Usuarios y Catalogo --
+[Análisis de Requerimientos y Diseño UML] lasts 1 day
+[HU-01: Consultar Catalogo de Productos] lasts 1 day and starts at [Análisis de Requerimientos y Diseño UML]'s end
+[HU-02: Registrar y Consultar Usuarios] lasts 3 days and starts at [HU-01: Consultar Catalogo de Productos]'s end
+[Revision del Sprint 1 (Review)] happens at [HU-02: Registrar y Consultar Usuarios]'s end
+
+-- Sprint 2: Pedidos e Historial --
+[HU-03: Registrar Pedido] lasts 2 days and starts at [Revision del Sprint 1 (Review)]'s end
+[HU-04: Consultar Historial de Pedidos] lasts 1 day and starts at [HU-03: Registrar Pedido]'s end
+[HU-05: Validar Integridad de Datos] lasts 1 day and starts at [HU-04: Consultar Historial de Pedidos]'s end
+[Entrega Final (Review y Retrospectiva)] happens at [HU-05: Validar Integridad de Datos]'s end
+
+@endgantt

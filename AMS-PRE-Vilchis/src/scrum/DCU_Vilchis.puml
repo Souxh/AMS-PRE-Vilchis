@@ -1,0 +1,27 @@
+@startuml
+
+title Sistema de Gestion de Pedidos - Casos de Uso
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Usuario registrado" as Usuario
+
+rectangle "Sistema de Gestion de Pedidos" {
+    usecase "Consultar catalogo\nde productos" as UC1
+    usecase "Realizar pedido" as UC2
+    usecase "Consultar historial\nde pedidos" as UC3
+    usecase "Validar usuario\ny producto" as UC4
+    usecase "Registrar pedido" as UC5
+    usecase "Confirmar pedido" as UC6
+}
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+
+UC2 .> UC4 : <<include>>
+UC2 .> UC5 : <<include>>
+UC2 .> UC6 : <<include>>
+
+@enduml
